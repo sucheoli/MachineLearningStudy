@@ -1,0 +1,17 @@
+.div-block{
+    border:3px dashed red;
+    height:100px;
+    width:100px;
+    margin:20px;
+    padding: 20px;
+    text-align: center;
+    line-height:100px;
+}
+
+.span-inline{
+    border:2px dotted blue;
+    margin: 20px;
+    padding: 20px;
+    height: 100px;
+    width: 100px;
+}

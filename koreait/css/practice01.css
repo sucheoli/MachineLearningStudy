@@ -1,0 +1,35 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    color: brown;
+    background-color: silver;
+}
+
+ol{
+    background-color: yellow;
+    color : darkblue;
+    text-align: center;
+}
+div{
+    border: 5px solid red;
+    width: 250px;
+    height: 100px;
+}
+.form-row {
+    margin:10px;
+    padding:30px;
+    border:5px solid red;
+    width:250px; 
+    height: 100px;
+  }
+  
+  #submit{
+     cursor:pointer;
+  }

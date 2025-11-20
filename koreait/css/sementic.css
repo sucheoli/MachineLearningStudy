@@ -1,0 +1,28 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    /* width와 height 계산이 편리함 */
+}
+
+a{
+    text-decoration: none;
+    /* 링크 밑줄 없애기 */
+}
+
+header, footer{
+    background-color: lightgray;
+}
+
+nav{
+    background-color: lightpink;
+}
+
+main{
+    background-color: lightcyan;
+}
+
+section{
+    background-color: lightgreen;
+    border: 1px solid black;
+}
