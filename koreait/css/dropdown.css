@@ -1,0 +1,84 @@
+body{
+    margin-top:50px;
+}
+
+nav ul{
+    width:100%;
+    background-color: darkblue;
+    margin:0px;
+    padding:0px;
+    list-style-type:none;
+    
+}
+
+nav ul li{
+    display: inline-block;
+    /* inline요소의 장점과 블록요소의 장점을 합친 것. 
+    즉, 외부는 inline: 여러개를 배치할 수 있고,
+     내부는 block: 너비, 높이 정렬 가능하게 만들 수 있다*/
+}
+
+.dropdown{
+    position:relative
+    /* dropdown메뉴의 부모 요소를 의미함. */
+}
+
+.dropdown a{ /* 드롭다운 안의 a태그 */
+    color : white;
+    text-decoration: none;
+    padding: 12px 16px;
+}
+
+.dropdown-menu{
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+}
+
+.dropdown-content{
+    display:none;
+    position:absolute;  
+    /* 위치를 부모기준으로 절대 위치 설정
+    position이 static이 아니어야한다. */
+    background-color:cornflowerblue;
+    color: aliceblue;
+    min-width: 115px;
+    top:100%;
+    left:0;
+}
+
+.dropdown:hover .dropdown-content{ /* dropdown을 hover했을때 dropdown content설정*/
+    display:block;
+}
+
+/* 드롭다운 내부 링크 스타일 */
+.dropdown-content a{
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: white;
+}
+
+/* 드롭 다운 항목에 마우스 오버시 강조효과 */
+.dropdown-content a:hover{
+    background-color:darkcyan;
+}
+
+.dropdown-menu:hover{
+    background-color: blue;
+}
+
+#home{
+    background-color: orange;
+    width: 100px;
+    text-align: center;
+    font-size : 16px;
+    float: right;
+    /* 오른쪽 정렬 */
+}
+#home a{
+    display : block;
+    text-decoration: none;
+    color: white;
+    padding: 16px;
+}

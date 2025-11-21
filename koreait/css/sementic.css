@@ -2,27 +2,122 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
-    /* width�� height ����� ������ */
+    /* width와 height 계산이 편리함
+    (width/height 를 계산할 때 padding, margin을 포함하여 계산하도록 하는 것) */
 }
+/* 모든 요소의 기본 여백을 제거하여 브라우저 기본 스타일을 초기화 했다. */
 
 a{
     text-decoration: none;
-    /* ��ũ ���� ���ֱ� */
+    /* 링크 밑줄 없애기 */
 }
+/* 링크스타일-> 밑줄을 제거하여 깔끔한 메뉴/버튼 느낌으로 표시 */
 
 header, footer{
     background-color: lightgray;
+    padding: 16px 12px;
+    /* 내부 여백을 보기 좋게 확보 */
+    
 }
+
 
 nav{
     background-color: lightpink;
+
 }
 
 main{
     background-color: lightcyan;
+    display : flex;
+     /* 요소들을 가로로 나열 */
+    flex-wrap:wrap; 
+    /* 화면이 좁아지면 자동 줄바꿈 */
+    gap:24px;
+    /* section 태그 사이의 간격 */
+    padding: 24px 12px;
 }
 
 section{
     background-color: lightgreen;
     border: 1px solid black;
+    border-radius: 10px;
+    padding: 16px;
+    flex: 1 1 560px;
+    /* flex: section이 가능한 최대 넓이로 늘어나도록 한다.
+    1(grow)남는 공간이 있으면 넓어지기, 1(shrink)공간이 부족하면 줄어들어라) 560(basis)560px로 기본 시작 
+    화면이 넓으면 2,3개 가로로 배치 화면이 좁으면 560px기준으로 자동 줄바꿈 */
+}
+/* section영역은 main영역을 모두 포함하고 있으므로 배경색이 겹쳐 연한 초록으로 보인다.
+> HTML안에서 main이 위에 있기 때문에 */
+
+.menu-sub{
+    display:flex;
+    /* 요소들을 가로로 나열 */
+    list-style-type: none;
+    /* 리스트에 o없애기 */
+    gap: 20px;
+    /* 리스트간 간격 조절 */
+    font-size:20px;
+}
+
+#posts{
+    display: flex;
+     /* flex컨테이너 의미 : 요소들을 가로로 나열 */
+    flex-direction: column;
+    /* 세로방향(위->아래) 방향으로 나열*/
+    gap:14px;
+}
+
+.posts{
+    min-height:160px;
+    /* 내용이 적어도 160px의 높이를 가짐 */
+}
+
+.div-post{
+    border: 1px solid black;
+    /* 게시글 박스 테두리 */
+    padding: 12px;
+    /* 게시글 내용과 테두리 사이의 여백 */
+    border-radius: 8px;
+    /* 모서리 둥글게 */
+    background-color: white;
+}
+
+#notice{
+    display: flex;
+    flex-direction: column;
+}/* id = notice 공지 전체를 감싸는 것 */
+
+#notice-items{
+    display:flex;
+    gap:12px;
+}
+/* id = notice div 공지item을 감싸는 것 */
+.notice{    
+    flex: 1;
+    /* 남은 공간을 균등하게 나누고 너비를 동일하게 맞춤 */
+    border: 2px solid red;
+    border-radius: 8px;
+    background-color:white;
+    min-height:200px;
+}
+/* notice를 하나하나 설정하는 것 */
+/* flex:1을 통해 한 줄에 여러개의 공지 카드가 있을 경우 각 카드가 같은 비율로 가로공간을 나누어 사용함. */
+
+@media(max-width:900px){
+    #notice-item{
+        flex-wrap: wrap;
+    }
+    .notice{
+        flex:1 1 calc(50%-12px);
+        /* 1(grow): 남은 공간이 있으면 늘어나라, 1(shrink)남은 공간이 부족하면 줄어라, calc(50%-12px)기본 크기를 부모의 절반의 12px 잡아라
+        한 줄에 2개 들어가게 하고 gap:12px로 생기는 여백을 계산해서 빼준것 */
+    }
+}
+
+@media(max-width: 560px){
+    .notice{
+        flex: 1 1 100%; 
+         /* 560px이하가 되면 1열로*/
+    }
 }
